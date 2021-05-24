@@ -1,0 +1,23 @@
+#score{
+    display: flex;
+    min-height: 100px;
+    min-width: 100px;
+    margin: 20px;
+}
+
+#timer{
+
+position: relative;
+
+}
+
+.startScreen{
+display: flex;
+align-items: center;
+}
+
+#quiz{
+height: 50px;
+width: 250px;
+background-color: #773344;
+}
