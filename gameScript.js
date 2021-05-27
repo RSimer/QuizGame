@@ -1,19 +1,20 @@
 // gonna start with time becuase i can ctrl c and ctrl v that 
 
-
+var startButton = document.querySelector("#start")
 var timeEl = document.querySelector("#timer");
-var secondsLeft = 90;
+var time = 90;
 var questionNum = 0;
+var choices = document.querySelector("#quiz")
 
 // start of the time function 
 
 
 function setTime() {
         var timerInterval = setInterval(function() {
-            secondsLeft--;
-            timeEl.textContent = secondsLeft + " scs left";
+            time--;
+            timeEl.textContent = time + " scs left";
 
-            if(secondsLeft === 0) {
+            if(time <= 0) {
             // Stops execution of action at set interval
             clearInterval(timerInterval);
             // Calls function to stop the test and send to scores screen
@@ -51,26 +52,39 @@ function start(){
         document.querySelector("#start").style = "display: none;";
 
         question();
-        document.querySelector("#question").style = "display: grid";
+        
 }
 
 // Start of changing question
  function question(){
 
-        quiz.innerHTML = quiz[questionNum];
- }
+       var currentQuestion =  quizArray[questionNum];
+       var TitleEl = document.querySelector("#QuestionTitle");
+       TitleEl.textContent = currentQuestion.title
+        choices.textContent = "";
+        for(i = 0; i<currentQuestion.choices.length; i++){
+                var choiceOption  = document.createElement("button");
+                choiceOption.setAttribute("class", "choice");
+                choiceOption.setAttribute("value", currentQuestion.choices[i]);
+                choiceOption.textContent = currentQuestion.choices[i];
+                choices.appendChild(choiceOption);
+                choiceOption.onclick = checkAnswer;
+                choiceOption.onclick = console.log(choiceOption.value);
+        }
+}
 
 
 
 // inner.html = quiz[0]; allowance of moving to different question
 
 function checkAnswer() {
-        var playeranswer = click.target.value;
-   if (playeranswer === quiz[questionNum].answer) {
-           textContent = "Right!";
-           time += 5;
-   }
-   else  textContent = "Nope!";
+        if (this.value !== quizArray[questionNum].answer){
+                time -=5
+        }
+      else { time +=5
+}
+        questionNum++;
+
 }
 
 
@@ -89,7 +103,7 @@ function checkAnswer() {
 // begin quiz section randomization and maybe how to do it honestly idk
 
 // variables and and wtf am I doing
-var quiz = [
+var quizArray = [
 
         {
                 title: "Am I going to pass this class",
@@ -126,3 +140,6 @@ var quiz = [
 ];
 
 
+
+
+startButton.addEventListener("click", start);

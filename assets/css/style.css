@@ -34,7 +34,7 @@ display: flex;
 }
 
 .question{
-    display: none;
+    /* display: none; */
     height: 50px;
     width: 250px;
     background-color: #773344;
