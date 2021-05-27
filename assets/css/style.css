@@ -5,6 +5,23 @@
     margin: 20px;
 }
 
+.startScreen{
+    display: flex;
+    position: relative;
+    left: 250px;
+}
+.startScreen h1{
+    position: relative;
+    bottom: 125px;
+    left: 50px;
+    align-items: center;
+}
+
+.startScreen button{
+    height: 50px;
+    width: 150px;
+}
+
 #timer{
 
 position: relative;
@@ -13,11 +30,18 @@ position: relative;
 
 .startScreen{
 display: flex;
-align-items: center;
+/* justify-content: center; */
 }
 
-#quiz{
-height: 50px;
-width: 250px;
-background-color: #773344;
+.question{
+    display: grid;
+    height: 50px;
+    width: 250px;
+    background-color: #773344;
+    padding: 30px;
 }
+.question.hover{
+    opacity: 80%;
+    background-color: cornsilk;
+}
+
