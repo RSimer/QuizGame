@@ -49,6 +49,8 @@ function start(){
 
         document.querySelector("#startScreen").style = "display: none;";
         document.querySelector("#start").style = "display: none;";
+
+        question();
         document.querySelector("#question").style = "display: grid";
 }
 
