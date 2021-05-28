@@ -6,6 +6,7 @@ var time = 90;
 var questionNum = 0;
 var choices = document.querySelector("#quizArray")
 
+
 // start of the time function 
 
 
@@ -66,6 +67,7 @@ function start(){
         for(i = 0; i<currentQuestion.choices.length; i++){
                 var choiceOption  = document.createElement("button");
                 choiceOption.setAttribute("class", "choice");
+                choiceOption.setAttribute("style", "color: blue; font-size: 15px;")
                 choiceOption.setAttribute("value", currentQuestion.choices[i]);
                 choiceOption.textContent = currentQuestion.choices[i];
                 choices.appendChild(choiceOption);
@@ -73,28 +75,24 @@ function start(){
                 choiceOption.onclick = console.log(choiceOption.value);
         }
 }
-
+// event listener for moving on to the next t
 
 
 // inner.html = quiz[0]; allowance of moving to different question
 
 function checkAnswer() {
-        if (this.value !== quizArray[questionNum].answer){
+        if (this.value != quizArray[questionNum].answer){
                 time -= 5;
-                next;
         }
       else { 
               time +=5;
-              next;
 }
-        function next(){
-              currentQuestion[1];
-        }
-
 }
+        choices.addEventListener("click", function() {
+                questionNum++;
+                checkAnswer();
 
-
-
+        });
 
 
 
@@ -146,7 +144,7 @@ var quizArray = [
 ];
 
 
-
+localStorage.setItem("quizArray", JSON.stringify(quizArray));
 
 startButton.addEventListener("click", start);
-document.addEventListener("click", quizArray);
+// document.addEventListener("click", checkAnswer);

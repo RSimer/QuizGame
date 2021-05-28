@@ -32,15 +32,14 @@ display: flex;
 /* justify-content: center; */
 }
 
-.quizArray{
+#quizArray{
     /* display: none; */
     height: 50px;
-    width: 250px;
-    background-color: #773344;
+    width: 500px;
     padding: 30px;
 }
-.quizArray.hover{
-    opacity: 80%;
-    background-color: cornsilk;
+#quizArray.button{
+    height: 50px;
+    background-color: pink;
 }
 
