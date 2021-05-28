@@ -1,42 +1,43 @@
 // gonna start with time becuase i can ctrl c and ctrl v that 
 
 var startButton = document.querySelector("#start")
-var timeEl = document.querySelector("#timer");
+var timeEl = document.querySelector(".timer");
 var time = 90;
 var questionNum = 0;
-var choices = document.querySelector("#quiz")
+var choices = document.querySelector("#quizArray")
 
 // start of the time function 
 
 
 function setTime() {
         var timerInterval = setInterval(function() {
-            time--;
             timeEl.textContent = time + " scs left";
+            time.setAttribute("style", "font-size: 20px;", "color: black");
 
             if(time <= 0) {
             // Stops execution of action at set interval
             clearInterval(timerInterval);
-            // Calls function to stop the test and send to scores screen
             timeContent();
-            endTime();
-            }
+            } else{
 
+                time--;
+            }
         }, 1000);
 }
 
+
+
+      
 // tells the clock to be on the page
 function timeContent() {
-            timeEl.textContent = " ";
+            timeEl.textContent = "";
+            var ScoreCard = document.getElementById(".timer")
+            timeEl.appendChild(ScoreCard)
            
 }
 
 
-function endTime(){
-        if (time === 0){
-                document.querySelector("#").textContent = "very sorry, try again next time me boyo.";
-        }
-}
+
 // end timer section
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -52,7 +53,7 @@ function start(){
         document.querySelector("#start").style = "display: none;";
 
         question();
-        
+        checkAnswer();
 }
 
 // Start of changing question
@@ -79,11 +80,16 @@ function start(){
 
 function checkAnswer() {
         if (this.value !== quizArray[questionNum].answer){
-                time -=5
+                time -= 5;
+                next;
         }
-      else { time +=5
+      else { 
+              time +=5;
+              next;
 }
-        questionNum++;
+        function next(){
+              currentQuestion[1];
+        }
 
 }
 
@@ -143,3 +149,4 @@ var quizArray = [
 
 
 startButton.addEventListener("click", start);
+document.addEventListener("click", quizArray);
