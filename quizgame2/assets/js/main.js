@@ -6,6 +6,9 @@ var HideMe = document.querySelector(".peekaboo");
 var startBtn = document.querySelector("#start");
 var questionNum = 0;
 var choices = document.querySelector("#questionList");
+var score = 0;
+var scoreEl = document.querySelector("#score");
+
 
 
 
@@ -52,11 +55,10 @@ function start (){
 // change from start screen to questions
 
 function question(){
-// title not working??? 
     var currentQuestion =  quizArray[questionNum];
     var TitleEl = document.querySelector("#questionTitle");
     TitleEl.textContent = currentQuestion.title
-     choices.textContent = "";
+     choices.innerHTML = "";
      console.log(TitleEl.textContent);
      for(i = 0; i<currentQuestion.choices.length; i++){
              var choiceOption  = document.createElement("button");
@@ -72,11 +74,23 @@ function question(){
 
 
 function checkAnswer(){
+    var choiceOption = document.querySelector(".choiceOption");
+    var currentQuestion = quizArray[questionNum];
+    var selectedAnswer = event.target.value;
 
-    // don't quite know how to give the click value
-    for(var i=0; i<4; i++)
-    link.onclick();
 
+   if (selectedAnswer === currentQuestion.answer){
+
+   score = score +5;
+    
+
+   }
+   else{}
+
+    questionNum++
+    console.log(score);
+    console.log(questionNum);
+    console.log(currentQuestion.answer);
 }
 
 
