@@ -1,0 +1,27 @@
+body{
+    background-color: aliceblue;
+}
+
+#timer{
+    position: relative;
+    left: 85%;
+}
+
+#opener{
+    position: relative;
+    left: 25%;
+    right: 25%;
+}
+
+#questionHere{
+    position: relative;
+    left: 40%;
+    right: 50%;
+    top: 150px;
+}
+#questionTitle{
+    position: relative;
+    left: 40%;
+    right: 50%;
+    font-size: 30px;
+}
