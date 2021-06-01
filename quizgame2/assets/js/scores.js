@@ -6,3 +6,5 @@ function highscores(){
 
 
 }
+
+localStorage.getItem("quizArray", JSON.stringify(quizArray));
