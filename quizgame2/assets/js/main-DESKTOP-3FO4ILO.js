@@ -4,7 +4,7 @@ var ShowMe = document.querySelector(".open");
 var questionSec = document.querySelector("#questionHere");
 var HideMe = document.querySelector(".peekaboo");
 var startBtn = document.querySelector("#start");
-var questionNum = 0;
+var questionNum = 1;
 var choices = document.querySelector("#questionList");
 var score = 0;
 var scoreEl = document.querySelector("#score");
@@ -37,13 +37,13 @@ function start (){
             display.textContent = minutes + ":" + seconds;
     
             if (--timer < 0) {
-                timer = duration;
+                
             }
         }, 1000);
     }
     
     window.onload = function () {
-        var fiveMinutes = 120,
+        var fiveMinutes = 90,
             display = document.querySelector('#timer');
         startTimer(fiveMinutes, display);
         display.setAttribute("style", "position: ")
@@ -77,7 +77,7 @@ function checkAnswer(){
     var choiceOption = document.querySelector(".choiceOption");
     var currentQuestion = quizArray[questionNum];
     var selectedAnswer = event.target.value;
-
+    
 
 
    if (selectedAnswer === currentQuestion.answer){
@@ -86,32 +86,28 @@ function checkAnswer(){
     
 
    }
-   else if (selectedAnswer !== currentQuestion.answer){
-       score = score -5;
-   }
-    
+   else if(selectedAnswer !== currentQuestion.answer) {
 
-   currentQuestion.innerHTML = "";
+    score = score -5;
+   }
+
+
     questionNum++;
+    question();
     console.log(score);
     console.log(questionNum);
     console.log(currentQuestion.answer);
-    console.log(currentQuestion.innerHTML);
 }
 
 
 
 function scores(){
-    var uh = undefined
-    if (uh === currentQuestion.answer ){
+
     choices.style = "display: none;";
     TitleEl.style = "display: none;";
-    } else if (display = 0){
-        choices.style = "display: none;";
-        TitleEl.style = "display: none;";
-    }
+
     highscores();
-    
+
 }
 
 
