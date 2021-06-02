@@ -55,7 +55,7 @@ function start (){
 // change from start screen to questions
 
 function question(){
-    var currentQuestion =  quizArray[questionNum];
+    var currentQuestion =  quizArray[3];
     var TitleEl = document.querySelector("#questionTitle");
     TitleEl.textContent = currentQuestion.title
      choices.innerHTML = "";
@@ -90,9 +90,9 @@ function checkAnswer(){
        score = score -5;
    }
     
-
    currentQuestion.innerHTML = "";
     questionNum++;
+    question();
     console.log(score);
     console.log(questionNum);
     console.log(currentQuestion.answer);
