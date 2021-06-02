@@ -37,7 +37,7 @@ function start (){
             display.textContent = minutes + ":" + seconds;
     
             if (--timer < 0) {
-                
+                timer = duration;
             }
         }, 1000);
     }
@@ -79,29 +79,36 @@ function checkAnswer(){
     var selectedAnswer = event.target.value;
 
 
+
    if (selectedAnswer === currentQuestion.answer){
 
    score = score +5;
     
 
    }
-   else{}
+   else if (selectedAnswer !== currentQuestion.answer){
+       score = score -5;
+   }
+    
 
-    questionNum++
+   currentQuestion.innerHTML = "";
+    questionNum++;
     console.log(score);
     console.log(questionNum);
     console.log(currentQuestion.answer);
+    console.log(currentQuestion.innerHTML);
 }
 
 
 
 function scores(){
-
+    var uh = undefined
+    if (uh === currentQuestion.answer){
     choices.style = "display: none;";
     TitleEl.style = "display: none;";
 
     highscores();
-
+    }
 }
 
 
@@ -110,4 +117,4 @@ function scores(){
 
 
 startBtn.addEventListener("click", start);
-document.addEventListener("click", checkAnswer);
+questionSec.addEventListener("click", checkAnswer);
