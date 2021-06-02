@@ -55,7 +55,7 @@ function start (){
 // change from start screen to questions
 
 function question(){
-    var currentQuestion =  quizArray[3];
+    var currentQuestion =  quizArray[0];
     var TitleEl = document.querySelector("#questionTitle");
     TitleEl.textContent = currentQuestion.title
      choices.innerHTML = "";
