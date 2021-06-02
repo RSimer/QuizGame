@@ -103,12 +103,15 @@ function checkAnswer(){
 
 function scores(){
     var uh = undefined
-    if (uh === currentQuestion.answer){
+    if (uh === currentQuestion.answer ){
     choices.style = "display: none;";
     TitleEl.style = "display: none;";
-
-    highscores();
+    } else if (display = 0){
+        choices.style = "display: none;";
+        TitleEl.style = "display: none;";
     }
+    highscores();
+    
 }
 
 
