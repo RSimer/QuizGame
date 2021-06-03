@@ -6,6 +6,10 @@ body{
     position: relative;
     left: 85%;
 }
+#score{
+    position: relative;
+    left: 75%;
+}
 
 #opener{
     position: relative;

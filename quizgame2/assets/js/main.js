@@ -83,33 +83,38 @@ function checkAnswer(){
    if (selectedAnswer === currentQuestion.answer){
 
    score = score +5;
+   alert("right!");
     
 
    }
    else if (selectedAnswer !== currentQuestion.answer){
        score = score -5;
+        alert("Wrong!");
    }
-    
+    score.innerHTML = "";
    currentQuestion.innerHTML = "";
     questionNum++;
     question();
+    
     console.log(score);
     console.log(questionNum);
     console.log(currentQuestion.answer);
     console.log(currentQuestion.innerHTML);
+
+    if (currentQuestion.title === undefined){
+        scores();
+    }
+    else if (currentQuestion.answer === undefined){
+        scores();
+    }
 }
 
 
 
 function scores(){
-    var uh = undefined
-    if (uh === currentQuestion.answer ){
-    choices.style = "display: none;";
-    TitleEl.style = "display: none;";
-    } else if (display = 0){
-        choices.style = "display: none;";
-        TitleEl.style = "display: none;";
-    }
+
+    question.display = "display: none";
+   
     highscores();
     
 }
