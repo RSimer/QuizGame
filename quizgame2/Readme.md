@@ -24,5 +24,5 @@ Welcome to the most confusing and headaching assignment I've ever done which isn
 
 ![Screenshot](assets/screenshot.png)
 
-https://rsimer.github.io/QuizGame/
+https://RSimer.github.io/QuizGame/
 
