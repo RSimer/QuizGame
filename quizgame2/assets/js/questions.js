@@ -33,6 +33,3 @@ var quizArray = [
 
     },
 ];
-
-
-localStorage.setItem("quizArray", JSON.stringify(quizArray));

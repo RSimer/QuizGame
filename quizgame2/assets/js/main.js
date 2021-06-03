@@ -7,8 +7,8 @@ var startBtn = document.querySelector("#start");
 var questionNum = 0;
 var choices = document.querySelector("#questionList");
 var score = 0;
+var highScore = 0;
 var scoreEl = document.querySelector("#score");
-
 
 
 
@@ -43,7 +43,7 @@ function start (){
     }
     
     window.onload = function () {
-        var fiveMinutes = 120,
+        var fiveMinutes = 90,
             display = document.querySelector('#timer');
         startTimer(fiveMinutes, display);
         display.setAttribute("style", "position: ")
@@ -59,6 +59,7 @@ function question(){
     var TitleEl = document.querySelector("#questionTitle");
     TitleEl.textContent = currentQuestion.title
      choices.innerHTML = "";
+     score.innerHTML = "";
      console.log(TitleEl.textContent);
      for(i = 0; i<currentQuestion.choices.length; i++){
              var choiceOption  = document.createElement("button");
@@ -91,7 +92,6 @@ function checkAnswer(){
        score = score -5;
         alert("Wrong!");
    }
-    score.innerHTML = "";
    currentQuestion.innerHTML = "";
     questionNum++;
     question();
@@ -101,26 +101,12 @@ function checkAnswer(){
     console.log(currentQuestion.answer);
     console.log(currentQuestion.innerHTML);
 
-    if (currentQuestion.title === undefined){
-        scores();
-    }
-    else if (currentQuestion.answer === undefined){
-        scores();
-    }
 }
 
-
-
-function scores(){
-
-    question.display = "display: none";
-   
-    highscores();
-    
+if (quizArray[questionNum] === undefined){
+    stop(question);
+    highScore();
 }
-
-
-
 
 
 

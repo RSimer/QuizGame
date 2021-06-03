@@ -1,9 +1,18 @@
-var points = document.querySelector("#highScore");
 
-function highscores(){
+var highscore = localStorage.getItem("highScore");
 
-    scoreEl.textContent = points;
-    
+var HighScore = function(){
+
+    prompt("I want your autograph for how good that score was!");
+
+    scoreEl.innerHTML = "";
+
+    if(highscore !== null){
+        if (score > highscore) {
+            localStorage.setItem("highscore", score);      
+        }
+    }
+    else{
+        localStorage.setItem("highscore", score);
+    }
 }
-
-localStorage.getItem("quizArray", JSON.stringify(quizArray));
